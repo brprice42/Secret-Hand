@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://denfmmvkixpoj"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_d2ep7"]
+[ext_resource type="Texture2D" uid="uid://cm8hhdk0nhumc" path="res://Github-Game-Off/graphics/table items/letter2.PNG" id="2_xtibp"]
+
+[node name="Letter1" instance=ExtResource("1_d2ep7")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(-101, -75)
+scale = Vector2(0.2, 0.217)
+polygon = PackedVector2Array(35, 9.21661, 940, 18.4332, 980, 663.594, 40, 677.419)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.217)
+texture = ExtResource("2_xtibp")

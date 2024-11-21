@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://co5hb74xrk5js"]
+
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/Table Elements/hints/hint.gd" id="2_32ehg"]
+
+[node name="Hint" type="Area2D" groups=["hints"]]
+script = ExtResource("2_32ehg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

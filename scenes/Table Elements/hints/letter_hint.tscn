@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7jkqpc4ymqof"]
+
+[ext_resource type="PackedScene" uid="uid://co5hb74xrk5js" path="res://Github-Game-Off/scenes/Table Elements/hints/hint.tscn" id="1_wtjfc"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/Table Elements/hints/letter_hint.gd" id="2_5cyd1"]
+[ext_resource type="Texture2D" uid="uid://d2v0k6nx5cdrs" path="res://Github-Game-Off/graphics/table items/letterhint.PNG" id="2_ekpve"]
+
+[node name="LetterHint" instance=ExtResource("1_wtjfc")]
+script = ExtResource("2_5cyd1")
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-282, -123, 188, -89, 194, -48, -18, 95, -286, -67)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_ekpve")

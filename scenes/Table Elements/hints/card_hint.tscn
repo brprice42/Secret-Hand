@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://34wjxio6oxwd"]
+
+[ext_resource type="PackedScene" uid="uid://co5hb74xrk5js" path="res://Github-Game-Off/scenes/Table Elements/hints/hint.tscn" id="1_6e748"]
+[ext_resource type="Texture2D" uid="uid://carjukeyam2wc" path="res://Github-Game-Off/graphics/cards/PaperCards1.1/CardBack1.png" id="2_2x4fa"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/Table Elements/hints/card_hint.gd" id="2_dwav7"]
+
+[node name="CardHint" instance=ExtResource("1_6e748")]
+script = ExtResource("2_dwav7")
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(-189, -289, 189, -291, 192, 292, -191, 292)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_2x4fa")

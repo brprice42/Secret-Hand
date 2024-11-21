@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbgx6cd1sv8k5"]
+
+[ext_resource type="PackedScene" uid="uid://co5hb74xrk5js" path="res://Github-Game-Off/scenes/Table Elements/hints/hint.tscn" id="1_43bll"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/Table Elements/hints/coaster_hint.gd" id="2_hnsjo"]
+[ext_resource type="Texture2D" uid="uid://ci8e6h0kr4nlu" path="res://Github-Game-Off/graphics/table items/coasterhint.PNG" id="2_j4ypq"]
+
+[node name="Coaster Hint" instance=ExtResource("1_43bll")]
+script = ExtResource("2_hnsjo")
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+scale = Vector2(0.35, 0.35)
+polygon = PackedVector2Array(-40, 114.286, -37.1429, 80, -24, 64, 34.2857, 57.1429, 128, 64, 180, 82.8571, 202.857, 108.571, 211.429, 140, 194.286, 142.857, 145.714, 157.143, 31.4286, 160, -34.2857, 142.857)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_j4ypq")

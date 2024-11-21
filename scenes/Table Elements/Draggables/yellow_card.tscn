@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctvky7ikd3g34"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_xavjc"]
+[ext_resource type="Texture2D" uid="uid://feibnyau10d4" path="res://Github-Game-Off/graphics/cards/PaperCards1.1/CardBack3.png" id="2_ndkoo"]
+
+[node name="YellowCard" instance=ExtResource("1_xavjc")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(239.114, 71.619, 239.114, 425.143, 463.882, 428.19, 465.476, 71.619)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_ndkoo")

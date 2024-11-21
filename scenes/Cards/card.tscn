@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfbmodilkivyv"]
+
+[ext_resource type="Texture2D" uid="uid://carjukeyam2wc" path="res://Github-Game-Off/graphics/cards/PaperCards1.1/CardBack1.png" id="1_5mubw"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/Cards/card.gd" id="1_q2jo0"]
+[ext_resource type="Texture2D" uid="uid://cxbrrudinsasg" path="res://Github-Game-Off/graphics/cards/PaperCards1.1/Blank Card.png" id="2_wrb2d"]
+
+[sub_resource type="Animation" id="Animation_7lg40"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_whoip"]
+resource_name = "deselect"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -25), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_phnah"]
+resource_name = "select"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2d0bn"]
+_data = {
+"RESET": SubResource("Animation_7lg40"),
+"deselect": SubResource("Animation_whoip"),
+"select": SubResource("Animation_phnah")
+}
+
+[node name="Card" type="Container"]
+z_index = 1
+custom_minimum_size = Vector2(75, 113)
+offset_right = 74.0
+offset_bottom = 111.0
+script = ExtResource("1_q2jo0")
+
+[node name="Graphic" type="Node2D" parent="."]
+
+[node name="Face" type="Sprite2D" parent="Graphic"]
+position = Vector2(37.43, 56.525)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("2_wrb2d")
+
+[node name="Back" type="Sprite2D" parent="Graphic"]
+visible = false
+position = Vector2(37.43, 56.525)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("1_5mubw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2d0bn")
+}
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

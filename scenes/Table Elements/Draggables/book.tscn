@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djqiao5cre1v4"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_ism1p"]
+[ext_resource type="Texture2D" uid="uid://cxxnunqji6aay" path="res://Github-Game-Off/graphics/table items/book.PNG" id="2_qb3yt"]
+
+[node name="Book" instance=ExtResource("1_ism1p")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(178.539, 143.238, 172.162, 172.19, 312.443, 441.905, 519.675, 364.19, 510.111, 310.857, 481.417, 249.905, 353.889, 54.8571)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_qb3yt")

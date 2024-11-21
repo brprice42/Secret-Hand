@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://btxn1584ihb55"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_qbw00"]
+[ext_resource type="Texture2D" uid="uid://bf5u3o2dlf75h" path="res://Github-Game-Off/graphics/table items/coffee.PNG" id="2_4wiqr"]
+
+[node name="Coffee" instance=ExtResource("1_qbw00")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(314.037, 164.571, 336.354, 149.333, 406.494, 140.19, 473.446, 146.286, 481.417, 160, 483.011, 265.143, 476.635, 333.714, 390.553, 352, 337.948, 339.81, 312.443, 318.476, 310.849, 292.571, 266.214, 289.524, 267.808, 210.286, 309.255, 202.667)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_4wiqr")

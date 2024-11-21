@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://pumtu3k5ujhe"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_nhk7i"]
+[ext_resource type="Texture2D" uid="uid://bfst1vxy4rdfj" path="res://Github-Game-Off/graphics/table items/candy1.PNG" id="2_ho6mc"]
+
+[node name="Candy1" instance=ExtResource("1_nhk7i")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(290.125, 227.048, 314.037, 236.19, 350.701, 225.524, 373.018, 227.048, 388.959, 239.238, 406.494, 225.524, 419.247, 227.048, 411.277, 269.714, 390.553, 259.048, 380.989, 269.714, 336.354, 272.762, 314.037, 262.095, 291.719, 275.81)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.217)
+texture = ExtResource("2_ho6mc")

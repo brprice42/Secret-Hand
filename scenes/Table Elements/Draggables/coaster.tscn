@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7yvrbgupgjr"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_vqu6o"]
+[ext_resource type="Texture2D" uid="uid://4317u7dpoqtw" path="res://Github-Game-Off/graphics/table items/coaster.PNG" id="2_6riw4"]
+
+[node name="Coaster" instance=ExtResource("1_vqu6o")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(282.155, 323.048, 280.561, 347.429, 336.354, 377.905, 393.742, 382.476, 443.159, 379.429, 492.576, 359.619, 492.576, 321.524, 465.476, 294.095, 412.871, 286.476, 326.79, 288, 294.908, 301.714)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_6riw4")

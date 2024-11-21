@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqft1a0allcmx"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_mig0r"]
+[ext_resource type="Texture2D" uid="uid://chwnpnchbux5y" path="res://Github-Game-Off/graphics/table items/keys.PNG" id="2_7kesf"]
+
+[node name="Keys" instance=ExtResource("1_mig0r")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(299.69, 251.429, 270.996, 245.333, 239.114, 330.667, 294.908, 353.524, 328.384, 274.286, 349.107, 280.381, 371.424, 266.667, 376.207, 246.857, 455.911, 230.095, 457.505, 222.476, 406.494, 207.238, 446.347, 195.048, 451.129, 170.667, 352.295, 187.429, 337.948, 202.667, 307.66, 220.952)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_7kesf")

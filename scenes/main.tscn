@@ -1,0 +1,600 @@
+[gd_scene load_steps=41 format=3 uid="uid://cecp63mtm46as"]
+
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/main.gd" id="1_r6651"]
+[ext_resource type="PackedScene" uid="uid://dbgx6cd1sv8k5" path="res://Github-Game-Off/scenes/Table Elements/hints/coaster_hint.tscn" id="2_fe2bl"]
+[ext_resource type="PackedScene" uid="uid://coxtk4tifb5vq" path="res://Github-Game-Off/scenes/UI Elements/board.tscn" id="2_nh4wi"]
+[ext_resource type="Texture2D" uid="uid://4317u7dpoqtw" path="res://Github-Game-Off/graphics/table items/coaster.PNG" id="4_rec1i"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/texture_button.gd" id="6_c0j3c"]
+[ext_resource type="Texture2D" uid="uid://d2phsfhedag0d" path="res://Github-Game-Off/graphics/table items/deck.png" id="7_1y8wg"]
+[ext_resource type="PackedScene" uid="uid://34wjxio6oxwd" path="res://Github-Game-Off/scenes/Table Elements/hints/card_hint.tscn" id="8_4uc5s"]
+[ext_resource type="PackedScene" uid="uid://c7jkqpc4ymqof" path="res://Github-Game-Off/scenes/Table Elements/hints/letter_hint.tscn" id="9_lpnjg"]
+[ext_resource type="Texture2D" uid="uid://cfffjr3epa5sr" path="res://Github-Game-Off/graphics/UI Elements/play.png" id="15_1g3a2"]
+[ext_resource type="Texture2D" uid="uid://ch3ibgik7755" path="res://Github-Game-Off/graphics/UI Elements/playPressed.png" id="16_fh6iv"]
+[ext_resource type="PackedScene" uid="uid://pjs36fq33gmq" path="res://Github-Game-Off/scenes/Table Elements/hints/book_hint.tscn" id="17_jos7f"]
+[ext_resource type="Texture2D" uid="uid://b8hl50rxkqy7q" path="res://Github-Game-Off/graphics/UI Elements/playHovered.png" id="17_ymw0t"]
+[ext_resource type="Texture2D" uid="uid://tgm6ej0ln3g" path="res://Github-Game-Off/graphics/UI Elements/playDisabled.png" id="18_u55ih"]
+[ext_resource type="PackedScene" uid="uid://drkl3xdpv0mqv" path="res://Github-Game-Off/scenes/Table Elements/Draggables/letter_1.tscn" id="21_6ly7v"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/ui.gd" id="22_dmssi"]
+[ext_resource type="PackedScene" uid="uid://denfmmvkixpoj" path="res://Github-Game-Off/scenes/Table Elements/Draggables/letter_2.tscn" id="22_jolwk"]
+[ext_resource type="PackedScene" uid="uid://cu7yvrbgupgjr" path="res://Github-Game-Off/scenes/Table Elements/Draggables/coaster.tscn" id="23_7oawv"]
+[ext_resource type="Texture2D" uid="uid://cnlcrtwqqsbh" path="res://Github-Game-Off/graphics/UI Elements/Spade.png" id="23_mhm82"]
+[ext_resource type="PackedScene" uid="uid://pumtu3k5ujhe" path="res://Github-Game-Off/scenes/Table Elements/Draggables/candy_1.tscn" id="23_n11h0"]
+[ext_resource type="Texture2D" uid="uid://c4sdllu2k5fxl" path="res://Github-Game-Off/graphics/UI Elements/Diamond.png" id="24_vetie"]
+[ext_resource type="PackedScene" uid="uid://d18jf6hjdhyws" path="res://Github-Game-Off/scenes/Table Elements/Draggables/candy_2.tscn" id="24_w5124"]
+[ext_resource type="PackedScene" uid="uid://djqiao5cre1v4" path="res://Github-Game-Off/scenes/Table Elements/Draggables/book.tscn" id="25_a0e4p"]
+[ext_resource type="Texture2D" uid="uid://depote2m1m6ol" path="res://Github-Game-Off/graphics/UI Elements/Heart.png" id="25_ehweb"]
+[ext_resource type="Texture2D" uid="uid://0hvemax0e0fm" path="res://Github-Game-Off/graphics/UI Elements/Club.png" id="26_14q2x"]
+[ext_resource type="PackedScene" uid="uid://btxn1584ihb55" path="res://Github-Game-Off/scenes/Table Elements/Draggables/coffee.tscn" id="26_cedu5"]
+[ext_resource type="PackedScene" uid="uid://bqft1a0allcmx" path="res://Github-Game-Off/scenes/Table Elements/Draggables/keys.tscn" id="28_23v7y"]
+[ext_resource type="PackedScene" uid="uid://bd66ko7fi6gy3" path="res://Github-Game-Off/scenes/Table Elements/Draggables/whiskey_glass.tscn" id="29_i8q7t"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/UI Elements/game_over_screen.gd" id="30_kvrwj"]
+[ext_resource type="PackedScene" uid="uid://fkd800rdjadr" path="res://Github-Game-Off/scenes/Table Elements/Draggables/whiskey_bottle.tscn" id="30_l31d2"]
+[ext_resource type="PackedScene" uid="uid://t7k31plb7uol" path="res://Github-Game-Off/scenes/Table Elements/Draggables/blue_card.tscn" id="31_ooihs"]
+[ext_resource type="PackedScene" uid="uid://ctvky7ikd3g34" path="res://Github-Game-Off/scenes/Table Elements/Draggables/yellow_card.tscn" id="32_xdty1"]
+[ext_resource type="PackedScene" uid="uid://bvd7tee0bi80b" path="res://Github-Game-Off/scenes/Table Elements/Draggables/joker_card.tscn" id="33_ddxci"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/UI Elements/score_screen.gd" id="35_chsfd"]
+[ext_resource type="FontFile" uid="uid://8i73bampbcnm" path="res://Github-Game-Off/graphics/fonts/GloriaHallelujah-Regular.ttf" id="35_vcxar"]
+[ext_resource type="Texture2D" uid="uid://c6po5moewtpf3" path="res://Github-Game-Off/graphics/UI Elements/generic_button.png" id="37_1x61q"]
+[ext_resource type="Texture2D" uid="uid://cpmne1qqpd8pw" path="res://Github-Game-Off/graphics/UI Elements/generic_pressed.png" id="38_ti2pw"]
+[ext_resource type="Texture2D" uid="uid://cn3w8k2akfwg0" path="res://Github-Game-Off/graphics/UI Elements/generic_hovered.png" id="39_2awwk"]
+[ext_resource type="Texture2D" uid="uid://cxbrrudinsasg" path="res://Github-Game-Off/graphics/cards/PaperCards1.1/Blank Card.png" id="46_7u1db"]
+
+[sub_resource type="Theme" id="Theme_1yd84"]
+default_font = ExtResource("35_vcxar")
+default_font_size = 1
+
+[sub_resource type="Theme" id="Theme_u0bj5"]
+default_font = ExtResource("35_vcxar")
+default_font_size = 35
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_r6651")
+
+[node name="PlayHandButton" type="TextureButton" parent="."]
+z_index = -1
+offset_left = 481.0
+offset_top = 418.0
+offset_right = 652.0
+offset_bottom = 496.0
+mouse_filter = 1
+disabled = true
+texture_normal = ExtResource("15_1g3a2")
+texture_pressed = ExtResource("16_fh6iv")
+texture_hover = ExtResource("17_ymw0t")
+texture_disabled = ExtResource("18_u55ih")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_c0j3c")
+
+[node name="Hints" type="Node2D" parent="."]
+
+[node name="CoasterHint" parent="Hints" instance=ExtResource("2_fe2bl")]
+position = Vector2(985, 72)
+
+[node name="CardHint" parent="Hints" instance=ExtResource("8_4uc5s")]
+position = Vector2(1034, 410)
+scale = Vector2(0.19, 0.19)
+
+[node name="LetterHint" parent="Hints" instance=ExtResource("9_lpnjg")]
+position = Vector2(173, 382)
+scale = Vector2(0.2, 0.2)
+
+[node name="Hands" type="Node2D" parent="."]
+
+[node name="PlayerHand" type="Node2D" parent="Hands"]
+
+[node name="EnemyHand" type="Node2D" parent="Hands"]
+
+[node name="cardLocations" type="Node2D" parent="."]
+
+[node name="Spawn" type="Marker2D" parent="cardLocations"]
+unique_name_in_owner = true
+position = Vector2(825, 267)
+
+[node name="PlayerHandPosition" type="Node2D" parent="cardLocations"]
+position = Vector2(240, 529)
+
+[node name="Marker2D" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+
+[node name="Marker2D2" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(76, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(152, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(228, 0)
+
+[node name="Marker2D5" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(304, 0)
+
+[node name="Marker2D6" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(380, 0)
+
+[node name="Marker2D7" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(456, 0)
+
+[node name="Marker2D8" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(532, 0)
+
+[node name="Marker2D9" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+position = Vector2(608, 0)
+
+[node name="Marker2D10" type="Marker2D" parent="cardLocations/PlayerHandPosition"]
+visible = false
+position = Vector2(684, 0)
+
+[node name="EnemyHandPosition" type="Node2D" parent="cardLocations"]
+position = Vector2(240, 12)
+
+[node name="Marker2D" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+
+[node name="Marker2D2" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(76, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(152, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(228, 0)
+
+[node name="Marker2D5" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(304, 0)
+
+[node name="Marker2D6" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(380, 0)
+
+[node name="Marker2D7" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(456, 0)
+
+[node name="Marker2D8" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(532, 0)
+
+[node name="Marker2D9" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+position = Vector2(608, 0)
+
+[node name="Marker2D10" type="Marker2D" parent="cardLocations/EnemyHandPosition"]
+visible = false
+position = Vector2(684, 0)
+
+[node name="PlayerScoringPosition" type="Node2D" parent="cardLocations"]
+position = Vector2(392, 430)
+
+[node name="Marker2D" type="Marker2D" parent="cardLocations/PlayerScoringPosition"]
+
+[node name="Marker2D2" type="Marker2D" parent="cardLocations/PlayerScoringPosition"]
+position = Vector2(76, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="cardLocations/PlayerScoringPosition"]
+position = Vector2(152, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="cardLocations/PlayerScoringPosition"]
+position = Vector2(228, 0)
+
+[node name="Marker2D5" type="Marker2D" parent="cardLocations/PlayerScoringPosition"]
+position = Vector2(304, 0)
+
+[node name="EnemyScoringPosition" type="Node2D" parent="cardLocations"]
+position = Vector2(392, 139)
+
+[node name="Marker2D" type="Marker2D" parent="cardLocations/EnemyScoringPosition"]
+
+[node name="Marker2D2" type="Marker2D" parent="cardLocations/EnemyScoringPosition"]
+position = Vector2(76, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="cardLocations/EnemyScoringPosition"]
+position = Vector2(152, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="cardLocations/EnemyScoringPosition"]
+position = Vector2(228, 0)
+
+[node name="Marker2D5" type="Marker2D" parent="cardLocations/EnemyScoringPosition"]
+position = Vector2(304, 0)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(575, 325)
+
+[node name="Draggables" type="Node2D" parent="."]
+
+[node name="Letter1" parent="Draggables" instance=ExtResource("21_6ly7v")]
+position = Vector2(91, 359)
+rotation = -0.427073
+scale = Vector2(0.873974, 0.741195)
+
+[node name="Letter5" parent="Draggables" instance=ExtResource("21_6ly7v")]
+position = Vector2(257, 343)
+rotation = 0.737446
+scale = Vector2(0.873974, 0.741195)
+
+[node name="Letter2" parent="Draggables" instance=ExtResource("22_jolwk")]
+position = Vector2(142, 429)
+rotation = 0.0252488
+scale = Vector2(0.800002, 0.679995)
+
+[node name="Letter3" parent="Draggables" instance=ExtResource("21_6ly7v")]
+position = Vector2(186, 371)
+rotation = 0.295799
+scale = Vector2(0.873974, 0.741195)
+
+[node name="Letter4" parent="Draggables" instance=ExtResource("21_6ly7v")]
+position = Vector2(161, 299)
+rotation = 0.00210038
+scale = Vector2(0.873974, 0.741195)
+
+[node name="Coaster" parent="Draggables" instance=ExtResource("23_7oawv")]
+position = Vector2(92, 542)
+scale = Vector2(0.9, 0.9)
+
+[node name="Joker2" parent="Draggables" instance=ExtResource("33_ddxci")]
+position = Vector2(1087, 369)
+rotation = 1.49625
+scale = Vector2(0.5, 0.47)
+
+[node name="YellowCard2" parent="Draggables" instance=ExtResource("32_xdty1")]
+position = Vector2(988, 378)
+rotation = 1.82642
+scale = Vector2(0.5, 0.47)
+
+[node name="BlueCard" parent="Draggables" instance=ExtResource("31_ooihs")]
+position = Vector2(1003, 378)
+rotation = 0.742763
+scale = Vector2(0.5, 0.47)
+
+[node name="YellowCard" parent="Draggables" instance=ExtResource("32_xdty1")]
+position = Vector2(1062, 406)
+rotation = -0.191721
+scale = Vector2(0.5, 0.47)
+
+[node name="Joker" parent="Draggables" instance=ExtResource("33_ddxci")]
+position = Vector2(974, 447)
+rotation = -0.74536
+scale = Vector2(0.5, 0.47)
+
+[node name="BlueCard2" parent="Draggables" instance=ExtResource("31_ooihs")]
+position = Vector2(1032, 450)
+rotation = 2.02431
+scale = Vector2(0.5, 0.47)
+
+[node name="Candy1" parent="Draggables" instance=ExtResource("23_n11h0")]
+position = Vector2(824, 475)
+scale = Vector2(0.675232, 0.69653)
+
+[node name="Candy3" parent="Draggables" instance=ExtResource("23_n11h0")]
+position = Vector2(820, 439)
+rotation = -0.578437
+scale = Vector2(0.675232, 0.69653)
+
+[node name="Candy2" parent="Draggables" instance=ExtResource("24_w5124")]
+position = Vector2(874, 454)
+
+[node name="Candy4" parent="Draggables" instance=ExtResource("24_w5124")]
+position = Vector2(896, 172)
+
+[node name="Book" parent="Draggables" instance=ExtResource("25_a0e4p")]
+position = Vector2(128, 146)
+scale = Vector2(1.07, 1.07)
+
+[node name="BookHint" parent="Draggables/Book" instance=ExtResource("17_jos7f")]
+position = Vector2(-3.73832, 110.28)
+scale = Vector2(0.7, 0.7)
+
+[node name="Coffee" parent="Draggables" instance=ExtResource("26_cedu5")]
+position = Vector2(89, 542)
+scale = Vector2(0.9, 0.9)
+
+[node name="Keys" parent="Draggables" instance=ExtResource("28_23v7y")]
+position = Vector2(974, 236)
+scale = Vector2(0.9, 0.9)
+
+[node name="WhiskeyGlass" parent="Draggables" instance=ExtResource("29_i8q7t")]
+position = Vector2(1006, 72)
+scale = Vector2(0.75, 0.65)
+
+[node name="WhiskeyBottle" parent="Draggables" instance=ExtResource("30_l31d2")]
+position = Vector2(1101, 177)
+scale = Vector2(0.75, 0.75)
+
+[node name="Deck" type="Sprite2D" parent="."]
+position = Vector2(852, 333)
+scale = Vector2(0.189974, 0.190064)
+texture = ExtResource("7_1y8wg")
+
+[node name="ScoreScreen" type="Control" parent="."]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("35_chsfd")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="ScoreScreen"]
+layout_mode = 0
+offset_left = -655.0
+offset_top = -598.0
+offset_right = 1768.0
+offset_bottom = 1240.0
+color = Color(0.2, 0.141176, 0.0235294, 0.941176)
+
+[node name="EnemyText" type="Label" parent="ScoreScreen/ColorRect2"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 598.0
+offset_right = 1471.0
+offset_bottom = 738.0
+theme = SubResource("Theme_1yd84")
+theme_override_colors/font_color = Color(1, 0.21268, 0.159696, 1)
+theme_override_colors/font_shadow_color = Color(0.218928, 0, 0.000157851, 1)
+theme_override_font_sizes/font_size = 70
+text = "Winner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerText" type="Label" parent="ScoreScreen/ColorRect2"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 1118.0
+offset_right = 1471.0
+offset_bottom = 1258.0
+theme = SubResource("Theme_1yd84")
+theme_override_colors/font_color = Color(0.152149, 0.402629, 0.672084, 1)
+theme_override_colors/font_shadow_color = Color(0.020804, 0.113336, 0.21411, 1)
+theme_override_font_sizes/font_size = 70
+text = "Loser"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="ScoreScreen/ColorRect2"]
+modulate = Color(0.703107, 0.925577, 0.831544, 1)
+layout_mode = 0
+offset_left = 1592.0
+offset_top = 886.0
+offset_right = 1766.0
+offset_bottom = 960.0
+texture_normal = ExtResource("37_1x61q")
+texture_pressed = ExtResource("38_ti2pw")
+texture_hover = ExtResource("39_2awwk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ScoreScreen/ColorRect2/TextureButton"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 14.0
+offset_top = -1.0
+offset_right = 181.0
+offset_bottom = 80.0
+theme = SubResource("Theme_u0bj5")
+text = "Continue"
+
+[node name="ScoringCards" type="Node2D" parent="ScoreScreen"]
+
+[node name="GameOverScreen" type="Control" parent="."]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("30_kvrwj")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="GameOverScreen"]
+layout_mode = 0
+offset_left = -655.0
+offset_top = -598.0
+offset_right = 1768.0
+offset_bottom = 1240.0
+color = Color(0.2, 0.141176, 0.0235294, 0.941176)
+
+[node name="EnemyText" type="Label" parent="GameOverScreen/ColorRect2"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 598.0
+offset_right = 1471.0
+offset_bottom = 738.0
+theme = SubResource("Theme_1yd84")
+theme_override_colors/font_color = Color(1, 0.21268, 0.159696, 1)
+theme_override_colors/font_shadow_color = Color(0.218928, 0, 0.000157851, 1)
+theme_override_font_sizes/font_size = 50
+text = "Loss Count:  2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerText" type="Label" parent="GameOverScreen/ColorRect2"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 1118.0
+offset_right = 1471.0
+offset_bottom = 1258.0
+theme = SubResource("Theme_1yd84")
+theme_override_colors/font_color = Color(0.152149, 0.402629, 0.672084, 1)
+theme_override_colors/font_shadow_color = Color(0.020804, 0.113336, 0.21411, 1)
+theme_override_font_sizes/font_size = 50
+text = "Win Count:  2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Outcome" type="Label" parent="GameOverScreen/ColorRect2"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 730.0
+offset_right = 1471.0
+offset_bottom = 890.0
+theme = SubResource("Theme_1yd84")
+theme_override_colors/font_color = Color(1, 0.21268, 0.159696, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "You Lose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGame" type="TextureButton" parent="GameOverScreen/ColorRect2"]
+modulate = Color(0.703107, 0.925577, 0.831544, 1)
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 1024.0
+offset_right = 1337.0
+offset_bottom = 1098.0
+texture_normal = ExtResource("37_1x61q")
+texture_pressed = ExtResource("38_ti2pw")
+texture_hover = ExtResource("39_2awwk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GameOverScreen/ColorRect2/NewGame"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 14.0
+offset_top = -1.0
+offset_right = 181.0
+offset_bottom = 80.0
+theme = SubResource("Theme_u0bj5")
+text = "New Game"
+
+[node name="ScoringCards" type="Node2D" parent="GameOverScreen"]
+
+[node name="Board" parent="." instance=ExtResource("2_nh4wi")]
+unique_name_in_owner = true
+z_index = 2
+position = Vector2(577, 341)
+scale = Vector2(0.14, 0.14)
+emptyColor = Color(0.415686, 0.254902, 0.14902, 0.556863)
+player1Color = Color(0.156779, 0.256142, 0.885597, 1)
+player2Color = Color(0.679015, 2.81565e-06, 5.77569e-07, 1)
+
+[node name="UI" type="Control" parent="."]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("22_dmssi")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="HintScreen" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -653.0
+offset_top = -610.0
+offset_right = 1770.0
+offset_bottom = 1228.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.141176, 0.0235294, 0.45098)
+
+[node name="CardHint" type="TextureRect" parent="UI/HintScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.5
+offset_top = -286.0
+offset_right = 179.5
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("46_7u1db")
+expand_mode = 1
+
+[node name="LetterHint" type="TextureRect" parent="UI/HintScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.5
+offset_top = -286.0
+offset_right = 179.5
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("46_7u1db")
+expand_mode = 1
+
+[node name="CoasterHint" type="TextureRect" parent="UI/HintScreen"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.5
+offset_top = -554.0
+offset_right = 245.5
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rec1i")
+expand_mode = 1
+
+[node name="Spade" type="TextureButton" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 992.0
+offset_top = 521.0
+offset_right = 1048.0
+offset_bottom = 578.0
+texture_normal = ExtResource("23_mhm82")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Diamond" type="TextureButton" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 521.0
+offset_right = 1115.0
+offset_bottom = 578.0
+texture_normal = ExtResource("24_vetie")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Heart" type="TextureButton" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 992.0
+offset_top = 585.0
+offset_right = 1048.0
+offset_bottom = 642.0
+texture_normal = ExtResource("25_ehweb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Club" type="TextureButton" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 585.0
+offset_right = 1114.0
+offset_bottom = 642.0
+texture_normal = ExtResource("26_14q2x")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="PlayHandButton" to="." method="_on_play_hand_button_pressed"]
+[connection signal="hint_clicked" from="Hints/CoasterHint" to="." method="_on_coaster_hint_hint_clicked"]
+[connection signal="close" from="ScoreScreen" to="." method="_on_score_screen_close"]
+[connection signal="gui_input" from="ScoreScreen" to="ScoreScreen" method="_on_gui_input"]
+[connection signal="pressed" from="ScoreScreen/ColorRect2/TextureButton" to="ScoreScreen" method="_on_texture_button_pressed"]
+[connection signal="gui_input" from="GameOverScreen" to="GameOverScreen" method="_on_gui_input"]
+[connection signal="pressed" from="GameOverScreen/ColorRect2/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="gui_input" from="UI/HintScreen" to="UI" method="_on_hint_screen_gui_input"]
+[connection signal="pressed" from="UI/Spade" to="UI" method="_on_spade_pressed"]
+[connection signal="pressed" from="UI/Diamond" to="UI" method="_on_diamond_pressed"]
+[connection signal="pressed" from="UI/Heart" to="UI" method="_on_heart_pressed"]
+[connection signal="pressed" from="UI/Club" to="UI" method="_on_club_pressed"]

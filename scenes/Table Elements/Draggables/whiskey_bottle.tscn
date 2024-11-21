@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fkd800rdjadr"]
+
+[ext_resource type="PackedScene" uid="uid://dkqi82ib1jlxy" path="res://Github-Game-Off/scenes/Table Elements/Draggables/draggable.tscn" id="1_fb02p"]
+[ext_resource type="Texture2D" uid="uid://crpmwpny87a4m" path="res://Github-Game-Off/graphics/table items/bottle.PNG" id="2_m76yh"]
+
+[node name="WhiskeyBottle" instance=ExtResource("1_fb02p")]
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+polygon = PackedVector2Array(325.195, 103.619, 315.631, 193.524, 304.472, 213.333, 255.055, 234.667, 248.679, 272.762, 256.649, 455.619, 306.066, 484.571, 395.336, 487.619, 447.941, 472.381, 454.317, 248.381, 403.306, 213.333, 388.959, 187.429, 379.395, 103.619, 350.701, 94.4762)
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_m76yh")
