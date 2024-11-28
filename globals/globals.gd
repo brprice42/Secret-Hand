@@ -27,9 +27,3 @@ var selected: int = 0:
 		else:
 			maxSelected = false
 			handReady.emit(maxSelected)
-
-
-
-
-# Called when the node enters the scene tree for the first time.
-var test = "hello"

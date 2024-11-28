@@ -25,12 +25,11 @@ func _ready() -> void:
 		
 	for item in get_tree().get_nodes_in_group("hints"):
 		item.connect("hint_clicked", _on_hint_clicked)
-	
+
 	Discard = Array()
 	setDeck()
-	dealPlayer()
-	dealEnemy()
-	flip_card()
+
+
 	
 #world interaction
 func _on_draggable_clicked():
@@ -44,10 +43,11 @@ func _on_draggable_clicked():
 				found = true
 		else:
 			item.is_dragging = false
-			
+
 func _on_hint_clicked(type: String):
 	var found: bool = false
 	if type == "book":
+		$hintSFX.play()
 		$UI/Diamond.show()
 		$Draggables/Book/BookHint.hide()
 	var items = $Draggables.get_children()
@@ -55,6 +55,7 @@ func _on_hint_clicked(type: String):
 	for item in items:
 		if item.contains_mouse:
 			return
+	$hintSFX.play()
 	if type == "coaster":
 		$UI/Club.show()
 		$Hints/CoasterHint.hide()
@@ -76,12 +77,12 @@ func setDeck():
 			Deck.append(Vector2i(i, j))
 			
 	Deck.shuffle()
-	
+
 func resetDeck():
 	Deck = Discard
 	Discard = Array()
 	Deck.shuffle()
-	
+
 func draw():
 	if Deck.size() > 0:
 		return Deck.pop_back()
@@ -89,7 +90,7 @@ func draw():
 		resetDeck()
 		return Deck.pop_back()
 	print(Deck.size())
-		
+
 func orderCards(a, b):
 	if a.card.y < b.card.y:
 		return true
@@ -97,7 +98,6 @@ func orderCards(a, b):
 		return a.card.x < b.card.x
 	else:
 		return false
-	
 
 func flip_card():
 	FlipCard = Card.instantiate()
@@ -108,7 +108,6 @@ func flip_card():
 	Globals.flipSuit = FlipCard.suit
 	Globals.flipNumber = FlipCard.number
 	Globals.flipValue = FlipCard.value
-	
 
 func dealEnemy():
 	for i in range(HAND_SIZE - $Hands/EnemyHand.get_child_count()):
@@ -122,13 +121,10 @@ func dealEnemy():
 	EnemyHand.sort_custom(orderCards)
 	for i in range(EnemyHand.size()):
 		EnemyHand[i].move(enemyPositions[i])
-	
-	
 
-	
-	
 func dealPlayer():
-	
+	$PlayHandButton.show()
+	$DealCards.play()
 	for i in range(HAND_SIZE - $Hands/PlayerHand.get_child_count()):
 		var instance = Card.instantiate()
 		instance.global_position = %Spawn.position
@@ -139,16 +135,10 @@ func dealPlayer():
 	PlayerHand.sort_custom(orderCards)
 	for i in range(PlayerHand.size()):
 		PlayerHand[i].move(playerPositions[i])
-		
-		
-	
-
 
 func _on_play_hand_button_pressed() -> void:
 	play_hand()
 	clear_cards()
-	
-	
 	
 func clear_cards():
 
@@ -159,6 +149,8 @@ func clear_cards():
 	EnemyScoringHand = Array()
 	
 func play_hand():
+	$PlayHandButton.hide()
+	$PlayHand.play()
 	for i in range(PlayerHand.size()):
 		if PlayerHand[i].cardSelected:
 			PlayerScoringHand.append(PlayerHand[i])
@@ -204,8 +196,6 @@ func play_hand():
 	for i in range(EnemyScoringHand.size()):
 		EnemyScoringHand[i].move(enemyScoringPositions[i])
 
-	
-
 func clear_game():
 	setDeck()
 	Discard = Array()
@@ -218,31 +208,69 @@ func clear_game():
 		
 	for card in $Hands/EnemyHand.get_children():
 		card.queue_free()
-		
+
 func start_game():
+	
 	%Board.player1 = 0
 	%Board.player2 = 0
-	dealPlayer()
 	dealEnemy()
+	dealPlayer()
 	flip_card()
-
-
 
 func _on_score_screen_close() -> void:
 	$ScoreScreen.hide()
 	if !Globals.gameOver:
-		dealPlayer()
 		dealEnemy()
+		dealPlayer()
 		flip_card()
 	else:
 		clear_game()
 		$GameOverScreen.winner = Globals.isWinner
+		
+		$Blues.volume_db = 0
+		$Soft.stop()
+		$Blues.play()
+		
 		$GameOverScreen.show()
 		Globals.gameOver = false
 
-
-
-
 func _on_new_game_pressed() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($Blues, "volume_db", -10, .5)
+	tween.parallel().tween_property($GameOverScreen, "modulate", Color.TRANSPARENT, .5)
+	
+	await tween.finished
+	$Blues.stop()
+	$Soft.play()
+
+	
 	$GameOverScreen.hide()
 	start_game()
+
+func _on_diologue_finish_scene() -> void:
+	start_game()
+
+func _on_start_game_pressed() -> void:
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property($Blues, "volume_db", -10, .5)
+	tween.parallel().tween_property($StartScreen, "modulate", Color.TRANSPARENT, .5)
+	
+	await tween.finished
+	$Blues.stop()
+	$Soft.play()
+
+	$StartScreen.hide()
+	$Diologue.queue_text("you", "* knock * * knock * Hello? Grandpa? I'm here!")
+	$Diologue.queue_text("grampa", "Is that you? Oh, welcome in. Geez, how long has it been?")
+	$Diologue.queue_text("you", "It's been a while for sure, I'm just glad I could make it out.")
+	$Diologue.queue_text("grampa", "Say, now that you're here, we ought to play some cards.")
+	$Diologue.queue_text("grampa", "Do you remember how to play Secret Hand?")
+	$Diologue.queue_text("you", "Uhh. I'm not su--")
+	$Diologue.queue_text("grampa", "Oh who am I kidding. No blood of mine would forget the rules of Secret Hand.")
+	$Diologue.queue_text("you", "Umm.. Yeah, you're going down!")
+	$Diologue.queue_text("grampa", "Go shuffle the cards while I make you a coffee then.")
+	$Diologue.queue_text("grampa", "(he heh... the cocky brat hasn't come around in years and thinks he can beat me.)")
+	$Diologue.queue_text("you", "(Secret Hand? I might have played it before but I don't remember the rules.)")
+	$Diologue.queue_text("you", "(There may be clues written down somewhere. I doubt he knows the rules by heart.)")
+	$Diologue.queue_text("grampa", "Ok, lets get this game going. Deal em' out!")

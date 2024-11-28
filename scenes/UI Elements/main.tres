@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cwqjqwvrlj3p3"]
+
+[ext_resource type="FontFile" uid="uid://8i73bampbcnm" path="res://Github-Game-Off/graphics/fonts/GloriaHallelujah-Regular.ttf" id="1_2bxtd"]
+
+[resource]
+default_font = ExtResource("1_2bxtd")
+default_font_size = 25

@@ -73,7 +73,7 @@ func _on_mouse_exited() -> void:
 func move(pos: Vector2):
 	var tween = get_tree().create_tween()
 	#$Graphic.hide()
-	tween.tween_property($".", "global_position", pos, .5)
+	tween.tween_property($".", "global_position", pos, .7)
 
 	
 func _on_gui_input(event: InputEvent) -> void:

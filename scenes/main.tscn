@@ -1,9 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://cecp63mtm46as"]
+[gd_scene load_steps=53 format=3 uid="uid://cecp63mtm46as"]
 
 [ext_resource type="Script" path="res://Github-Game-Off/scenes/main.gd" id="1_r6651"]
 [ext_resource type="PackedScene" uid="uid://dbgx6cd1sv8k5" path="res://Github-Game-Off/scenes/Table Elements/hints/coaster_hint.tscn" id="2_fe2bl"]
 [ext_resource type="PackedScene" uid="uid://coxtk4tifb5vq" path="res://Github-Game-Off/scenes/UI Elements/board.tscn" id="2_nh4wi"]
-[ext_resource type="Texture2D" uid="uid://4317u7dpoqtw" path="res://Github-Game-Off/graphics/table items/coaster.PNG" id="4_rec1i"]
 [ext_resource type="Script" path="res://Github-Game-Off/scenes/texture_button.gd" id="6_c0j3c"]
 [ext_resource type="Texture2D" uid="uid://d2phsfhedag0d" path="res://Github-Game-Off/graphics/table items/deck.png" id="7_1y8wg"]
 [ext_resource type="PackedScene" uid="uid://34wjxio6oxwd" path="res://Github-Game-Off/scenes/Table Elements/hints/card_hint.tscn" id="8_4uc5s"]
@@ -27,30 +26,43 @@
 [ext_resource type="PackedScene" uid="uid://btxn1584ihb55" path="res://Github-Game-Off/scenes/Table Elements/Draggables/coffee.tscn" id="26_cedu5"]
 [ext_resource type="PackedScene" uid="uid://bqft1a0allcmx" path="res://Github-Game-Off/scenes/Table Elements/Draggables/keys.tscn" id="28_23v7y"]
 [ext_resource type="PackedScene" uid="uid://bd66ko7fi6gy3" path="res://Github-Game-Off/scenes/Table Elements/Draggables/whiskey_glass.tscn" id="29_i8q7t"]
+[ext_resource type="Theme" uid="uid://cwqjqwvrlj3p3" path="res://Github-Game-Off/scenes/UI Elements/main.tres" id="30_85bob"]
 [ext_resource type="Script" path="res://Github-Game-Off/scenes/UI Elements/game_over_screen.gd" id="30_kvrwj"]
 [ext_resource type="PackedScene" uid="uid://fkd800rdjadr" path="res://Github-Game-Off/scenes/Table Elements/Draggables/whiskey_bottle.tscn" id="30_l31d2"]
 [ext_resource type="PackedScene" uid="uid://t7k31plb7uol" path="res://Github-Game-Off/scenes/Table Elements/Draggables/blue_card.tscn" id="31_ooihs"]
 [ext_resource type="PackedScene" uid="uid://ctvky7ikd3g34" path="res://Github-Game-Off/scenes/Table Elements/Draggables/yellow_card.tscn" id="32_xdty1"]
 [ext_resource type="PackedScene" uid="uid://bvd7tee0bi80b" path="res://Github-Game-Off/scenes/Table Elements/Draggables/joker_card.tscn" id="33_ddxci"]
+[ext_resource type="Texture2D" uid="uid://0xc8r6tp1osy" path="res://Github-Game-Off/graphics/UI Elements/spade_rules.png" id="33_nssj0"]
+[ext_resource type="Texture2D" uid="uid://dl0lqyrgwfflc" path="res://Github-Game-Off/graphics/UI Elements/heart_rules.png" id="34_js0jb"]
+[ext_resource type="Texture2D" uid="uid://8l3o12cgrh1l" path="res://Github-Game-Off/graphics/UI Elements/club_rules.png" id="35_0uaex"]
 [ext_resource type="Script" path="res://Github-Game-Off/scenes/UI Elements/score_screen.gd" id="35_chsfd"]
 [ext_resource type="FontFile" uid="uid://8i73bampbcnm" path="res://Github-Game-Off/graphics/fonts/GloriaHallelujah-Regular.ttf" id="35_vcxar"]
+[ext_resource type="Texture2D" uid="uid://d0w4vii3y4jhu" path="res://Github-Game-Off/graphics/UI Elements/diamond_rules.png" id="36_sooce"]
 [ext_resource type="Texture2D" uid="uid://c6po5moewtpf3" path="res://Github-Game-Off/graphics/UI Elements/generic_button.png" id="37_1x61q"]
 [ext_resource type="Texture2D" uid="uid://cpmne1qqpd8pw" path="res://Github-Game-Off/graphics/UI Elements/generic_pressed.png" id="38_ti2pw"]
 [ext_resource type="Texture2D" uid="uid://cn3w8k2akfwg0" path="res://Github-Game-Off/graphics/UI Elements/generic_hovered.png" id="39_2awwk"]
-[ext_resource type="Texture2D" uid="uid://cxbrrudinsasg" path="res://Github-Game-Off/graphics/cards/PaperCards1.1/Blank Card.png" id="46_7u1db"]
+[ext_resource type="StyleBox" uid="uid://b7r71kqhs81pc" path="res://Github-Game-Off/scenes/UI Elements/text_box.tres" id="42_hwfqc"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/UI Elements/diologue.gd" id="42_w3ogs"]
+[ext_resource type="AudioStream" uid="uid://bvcej4luyyjyj" path="res://Github-Game-Off/audio/hint_found.wav" id="44_kh1er"]
+[ext_resource type="AudioStream" uid="uid://c6uuqo4vbpdke" path="res://Github-Game-Off/audio/blues.ogg" id="45_bynd1"]
+[ext_resource type="AudioStream" uid="uid://clb5df0r2wc5g" path="res://Github-Game-Off/audio/jazz.ogg" id="46_jb7ha"]
+[ext_resource type="AudioStream" uid="uid://b07rpqafnofqm" path="res://Github-Game-Off/audio/Card Dealing.wav" id="47_535eq"]
+[ext_resource type="AudioStream" uid="uid://ctpbxijdc5gwj" path="res://Github-Game-Off/audio/Card Placed.wav" id="48_vfcia"]
+[ext_resource type="AudioStream" uid="uid://dmpojefcflrfi" path="res://Github-Game-Off/audio/Card Flip.wav" id="49_xy7q2"]
+[ext_resource type="Script" path="res://Github-Game-Off/scenes/UI Elements/mute_button.gd" id="50_dnoq5"]
 
 [sub_resource type="Theme" id="Theme_1yd84"]
 default_font = ExtResource("35_vcxar")
 default_font_size = 1
 
-[sub_resource type="Theme" id="Theme_u0bj5"]
-default_font = ExtResource("35_vcxar")
-default_font_size = 35
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mm40"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_r6651")
 
 [node name="PlayHandButton" type="TextureButton" parent="."]
+visible = false
 z_index = -1
 offset_left = 481.0
 offset_top = 418.0
@@ -69,7 +81,7 @@ script = ExtResource("6_c0j3c")
 [node name="Hints" type="Node2D" parent="."]
 
 [node name="CoasterHint" parent="Hints" instance=ExtResource("2_fe2bl")]
-position = Vector2(985, 72)
+position = Vector2(975, 72)
 
 [node name="CardHint" parent="Hints" instance=ExtResource("8_4uc5s")]
 position = Vector2(1034, 410)
@@ -268,7 +280,7 @@ scale = Vector2(0.675232, 0.69653)
 position = Vector2(874, 454)
 
 [node name="Candy4" parent="Draggables" instance=ExtResource("24_w5124")]
-position = Vector2(896, 172)
+position = Vector2(937, 176)
 
 [node name="Book" parent="Draggables" instance=ExtResource("25_a0e4p")]
 position = Vector2(128, 146)
@@ -279,6 +291,7 @@ position = Vector2(-3.73832, 110.28)
 scale = Vector2(0.7, 0.7)
 
 [node name="Coffee" parent="Draggables" instance=ExtResource("26_cedu5")]
+visible = false
 position = Vector2(89, 542)
 scale = Vector2(0.9, 0.9)
 
@@ -287,7 +300,7 @@ position = Vector2(974, 236)
 scale = Vector2(0.9, 0.9)
 
 [node name="WhiskeyGlass" parent="Draggables" instance=ExtResource("29_i8q7t")]
-position = Vector2(1006, 72)
+position = Vector2(996, 72)
 scale = Vector2(0.75, 0.65)
 
 [node name="WhiskeyBottle" parent="Draggables" instance=ExtResource("30_l31d2")]
@@ -365,7 +378,8 @@ offset_left = 14.0
 offset_top = -1.0
 offset_right = 181.0
 offset_bottom = 80.0
-theme = SubResource("Theme_u0bj5")
+theme = ExtResource("30_85bob")
+theme_override_font_sizes/font_size = 35
 text = "Continue"
 
 [node name="ScoringCards" type="Node2D" parent="ScoreScreen"]
@@ -450,10 +464,72 @@ offset_left = 14.0
 offset_top = -1.0
 offset_right = 181.0
 offset_bottom = 80.0
-theme = SubResource("Theme_u0bj5")
+theme = ExtResource("30_85bob")
+theme_override_font_sizes/font_size = 35
 text = "New Game"
 
 [node name="ScoringCards" type="Node2D" parent="GameOverScreen"]
+
+[node name="StartScreen" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="StartScreen"]
+layout_mode = 0
+offset_left = -679.0
+offset_top = -598.0
+offset_right = 1744.0
+offset_bottom = 1240.0
+color = Color(0.2, 0.141176, 0.0235294, 0.615686)
+
+[node name="StartGame" type="TextureButton" parent="StartScreen"]
+modulate = Color(0.703107, 0.925577, 0.831544, 1)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 418.0
+offset_right = 690.0
+offset_bottom = 509.0
+texture_normal = ExtResource("37_1x61q")
+texture_pressed = ExtResource("38_ti2pw")
+texture_hover = ExtResource("39_2awwk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="StartScreen/StartGame"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -40.5
+offset_right = 83.5
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("30_85bob")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="StartScreen"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 69.0
+offset_right = 887.0
+offset_bottom = 268.0
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Secret Hand"
 
 [node name="Board" parent="." instance=ExtResource("2_nh4wi")]
 unique_name_in_owner = true
@@ -498,13 +574,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.5
-offset_top = -286.0
-offset_right = 179.5
+offset_left = -227.5
+offset_top = -310.0
+offset_right = 200.5
 offset_bottom = 277.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("46_7u1db")
+texture = ExtResource("33_nssj0")
 expand_mode = 1
 
 [node name="LetterHint" type="TextureRect" parent="UI/HintScreen"]
@@ -515,14 +591,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.5
+offset_left = -356.5
 offset_top = -286.0
-offset_right = 179.5
+offset_right = 343.5
 offset_bottom = 277.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("46_7u1db")
+texture = ExtResource("34_js0jb")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="CoasterHint" type="TextureRect" parent="UI/HintScreen"]
 visible = false
@@ -533,14 +610,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -404.5
-offset_top = -554.0
-offset_right = 245.5
-offset_bottom = 291.0
+offset_left = -236.5
+offset_top = -302.0
+offset_right = 330.5
+offset_bottom = 287.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_rec1i")
+texture = ExtResource("35_0uaex")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="BookHint" type="TextureRect" parent="UI/HintScreen"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.5
+offset_top = -884.0
+offset_right = 463.5
+offset_bottom = 571.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_sooce")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Spade" type="TextureButton" parent="UI"]
 visible = false
@@ -586,6 +683,185 @@ texture_normal = ExtResource("26_14q2x")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Diologue" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mm40")
+script = ExtResource("42_w3ogs")
+
+[node name="ColorRect2" type="ColorRect" parent="Diologue"]
+layout_mode = 0
+offset_left = -655.0
+offset_top = -597.0
+offset_right = 1768.0
+offset_bottom = 1241.0
+color = Color(0, 0, 0, 0.207843)
+
+[node name="PlayerContainer" type="MarginContainer" parent="Diologue"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -131.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 215
+theme_override_constants/margin_right = 215
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Diologue/PlayerContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("42_hwfqc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Diologue/PlayerContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="Diologue/PlayerContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="PlayerText" type="HBoxContainer" parent="Diologue/PlayerContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="Diologue/PlayerContainer/MarginContainer/PlayerText"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "*"
+
+[node name="Text" type="Label" parent="Diologue/PlayerContainer/MarginContainer/PlayerText"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You: ckhw ocqosjcoqscosmco wcpn cqjsqco csosj djwdl onj odjonojx ocjwnojw"
+vertical_alignment = 3
+autowrap_mode = 3
+clip_text = true
+
+[node name="End" type="Label" parent="Diologue/PlayerContainer/MarginContainer/PlayerText"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "v"
+vertical_alignment = 2
+
+[node name="EnemyContainer" type="MarginContainer" parent="Diologue"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 215
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 215
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="Diologue/EnemyContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("42_hwfqc")
+
+[node name="MarginContainer" type="MarginContainer" parent="Diologue/EnemyContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="Diologue/EnemyContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="EnemyText" type="HBoxContainer" parent="Diologue/EnemyContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="Diologue/EnemyContainer/MarginContainer/EnemyText"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "*"
+
+[node name="Text" type="Label" parent="Diologue/EnemyContainer/MarginContainer/EnemyText"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You: ckhw ocqosjcoqscosmco wcpn cqjsqco csosj djwdl ubhbu onjco"
+vertical_alignment = 3
+autowrap_mode = 3
+clip_text = true
+
+[node name="End" type="Label" parent="Diologue/EnemyContainer/MarginContainer/EnemyText"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("30_85bob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "v"
+vertical_alignment = 2
+
+[node name="hintSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_kh1er")
+
+[node name="Blues" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_bynd1")
+autoplay = true
+
+[node name="Soft" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_jb7ha")
+volume_db = -3.537
+
+[node name="DealCards" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("47_535eq")
+volume_db = 5.0
+
+[node name="PlayHand" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_vfcia")
+volume_db = 5.0
+
+[node name="UIselect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("49_xy7q2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MuteButton" type="CheckButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -99.0
+offset_bottom = 49.0
+grow_horizontal = 0
+focus_mode = 0
+theme = ExtResource("30_85bob")
+theme_override_font_sizes/font_size = 20
+text = "mute"
+script = ExtResource("50_dnoq5")
+
 [connection signal="pressed" from="PlayHandButton" to="." method="_on_play_hand_button_pressed"]
 [connection signal="hint_clicked" from="Hints/CoasterHint" to="." method="_on_coaster_hint_hint_clicked"]
 [connection signal="close" from="ScoreScreen" to="." method="_on_score_screen_close"]
@@ -593,8 +869,11 @@ stretch_mode = 5
 [connection signal="pressed" from="ScoreScreen/ColorRect2/TextureButton" to="ScoreScreen" method="_on_texture_button_pressed"]
 [connection signal="gui_input" from="GameOverScreen" to="GameOverScreen" method="_on_gui_input"]
 [connection signal="pressed" from="GameOverScreen/ColorRect2/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="StartScreen/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="gui_input" from="UI/HintScreen" to="UI" method="_on_hint_screen_gui_input"]
 [connection signal="pressed" from="UI/Spade" to="UI" method="_on_spade_pressed"]
 [connection signal="pressed" from="UI/Diamond" to="UI" method="_on_diamond_pressed"]
 [connection signal="pressed" from="UI/Heart" to="UI" method="_on_heart_pressed"]
 [connection signal="pressed" from="UI/Club" to="UI" method="_on_club_pressed"]
+[connection signal="finish_scene" from="Diologue" to="." method="_on_diologue_finish_scene"]
+[connection signal="pressed" from="CanvasLayer/MuteButton" to="CanvasLayer/MuteButton" method="_on_pressed"]

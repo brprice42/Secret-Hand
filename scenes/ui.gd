@@ -13,22 +13,28 @@ func _process(delta: float) -> void:
 
 
 func _on_spade_pressed() -> void:
+	$"../UIselect".play()
 	hide_hints()
 	$HintScreen.show()
 	$HintScreen/CardHint.show()
 
 
 func _on_diamond_pressed() -> void:
+	$"../UIselect".play()
 	hide_hints()
 	$HintScreen.show()
+	$HintScreen/BookHint.show()
 
 
 func _on_heart_pressed() -> void:
+	$"../UIselect".play()
 	hide_hints()
 	$HintScreen.show()
+	$HintScreen/LetterHint.show()
 
 
 func _on_club_pressed() -> void:
+	$"../UIselect".play()
 	hide_hints()
 	$HintScreen.show()
 	$HintScreen/CoasterHint.show()
