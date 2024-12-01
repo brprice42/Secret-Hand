@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch3ibgik7755"
-path="res://.godot/imported/playPressed.png-ad6b5a16d1397cb9aa11c30feb7d8942.ctex"
+uid="uid://c6tqttfgm8kyu"
+path="res://.godot/imported/Coffee_new.png-ce88a28654a0f78a7e14fa2f92d89d39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Github-Game-Off/graphics/UI Elements/playPressed.png"
-dest_files=["res://.godot/imported/playPressed.png-ad6b5a16d1397cb9aa11c30feb7d8942.ctex"]
+source_file="res://Github-Game-Off/graphics/table items/Coffee_new.png"
+dest_files=["res://.godot/imported/Coffee_new.png-ce88a28654a0f78a7e14fa2f92d89d39.ctex"]
 
 [params]
 

@@ -19,6 +19,9 @@ var draggables: Array
 @onready var enemyScoringPositions = $cardLocations/EnemyScoringPosition.get_children().map(func(x): return x.global_position)
 
 func _ready() -> void:
+	
+	
+	$Blues.play()
 	draggables = get_tree().get_nodes_in_group("draggable")
 	for item in draggables:
 		item.connect("draggable_clicked", _on_draggable_clicked)

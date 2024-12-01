@@ -39,8 +39,3 @@ func _ready() -> void:
 		pin.modulate = emptyColor
 	player1 = 0
 	player2 = 0
-	print(p1pins.size())
-	print(p2pins.size())
-	
-		
-		
