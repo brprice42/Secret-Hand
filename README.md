@@ -9,4 +9,6 @@ Inspired by frustrated Midwest relatives, in secret hand, you are challenged to 
 This is the first game I've released so any feedback is appreciated. 
 
 I used the asset pack PaperCards by uncookedtoast on Itch.io
+
+The game audio files are not included in this repository
  
