@@ -248,6 +248,7 @@ func _on_new_game_pressed() -> void:
 
 	
 	$GameOverScreen.hide()
+	$GameOverScreen.modulate = Color.WHITE
 	start_game()
 
 func _on_diologue_finish_scene() -> void:
