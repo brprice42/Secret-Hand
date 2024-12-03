@@ -14,6 +14,7 @@ The game audio files are not included in this repository
 
 
 -------- RULES --------
+
 Note: The following rules are intended to be discovered in game. This guide is recommended for people who have played the game but are still confused.
 
 
